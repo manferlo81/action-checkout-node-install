@@ -31,13 +31,13 @@ jobs:
 
     outputs:
       major-tag: ${{ steps.extract-tag.outputs.tag }}
-    
+
     steps:
       - name: setup NodeJS 20.x
         uses: actions/setup-node@v4
         with:
           node-version: 20.x
-        
+
       - name: Extract Major Tag
         id: extract-tag
         run: echo "tag=v0" >> $GITHUB_OUTPUT
