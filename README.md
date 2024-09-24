@@ -2,6 +2,10 @@
 
 A composite action to checkout, setup NodeJS and install dependencies
 
+This action uses [`actions/checkout`](https://github.com/actions/checkout) and [`actions/setup-node`](https://github.com/actions/setup-node).
+
+We will run `npm ci`(see [source](#source)) which requires a `package-lock.json` or `npm-shrinkwrap.json`, make sure it exists otherwise the action will fail.
+
 ## Guide
 
 * [Usage](#usage)
@@ -23,16 +27,16 @@ steps:
 
 | Input | Description | Required | Default |
 | ----- | ----------- | -------- | ------- |
-| `node-version` | NodeJS version to setup | No | 20.x |
-| `registry-url` | Registry URL | No | <https://registry.npmjs.org/> |
+| [`node-version`](#node-version) | NodeJS version to setup | No | 20.x |
+| [`registry-url`](#registry-url) | Registry URL | No | <https://registry.npmjs.org/> |
 
 ### `node-version`
 
-Sets what version of NodeJS will be installed. This values will be passed to `actions/setup-node`.  See their documentation [here](https://github.com/actions/setup-node#usage).
+Sets what version of NodeJS will be installed. This values will be passed to [`actions/setup-node`](https://github.com/actions/setup-node).  See their documentation [here](https://github.com/actions/setup-node#usage).
 
 ### `registry-url`
 
-Sets the package registry. This values will be passed to `actions/setup-node`. See their documentation [here](https://github.com/actions/setup-node#usage).
+Sets the package registry URL. This values will be passed to [`actions/setup-node`](https://github.com/actions/setup-node). See their documentation [here](https://github.com/actions/setup-node#usage).
 
 ## Source
 
@@ -63,7 +67,6 @@ runs:
         node-version: ${{ inputs.node-version }}
         registry-url: ${{ inputs.registry-url }}
         cache: npm
-        cache-dependency-path: "package-lock.json"
 
     - name: Install dependencies
       shell: bash
