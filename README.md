@@ -26,6 +26,14 @@ steps:
 | `node-version` | NodeJS version to setup | No | 20.x |
 | `registry-url` | Registry URL | No | <https://registry.npmjs.org/> |
 
+### `node-version`
+
+Sets what version of NodeJS will be installed. This values will be passed to `actions/setup-node`.  See their documentation [here](https://github.com/actions/setup-node#usage).
+
+### `registry-url`
+
+Sets the package registry. This values will be passed to `actions/setup-node`. See their documentation [here](https://github.com/actions/setup-node#usage).
+
 ## Source
 
 ```yaml
