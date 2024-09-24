@@ -2,14 +2,13 @@
 
 A composite action to checkout, setup NodeJS and install dependencies
 
-This action uses [`actions/checkout`](https://github.com/actions/checkout) and [`actions/setup-node`](https://github.com/actions/setup-node).
-
-We will run `npm ci`(see [source](#source)) which requires a `package-lock.json` or `npm-shrinkwrap.json`, make sure it exists otherwise the action will fail.
+We will run `npm ci` (see [Source section](#source)) which requires a `package-lock.json` or `npm-shrinkwrap.json`, make sure it exists otherwise the action will fail.
 
 ## Guide
 
 * [Usage](#usage)
 * [Inputs](#inputs)
+* [Used Actions](#used-actions)
 * [Source](#source)
 
 ## Usage
@@ -37,6 +36,13 @@ Sets what version of NodeJS will be installed. This values will be passed to [`a
 ### `registry-url`
 
 Sets the package registry URL. This values will be passed to [`actions/setup-node`](https://github.com/actions/setup-node). See their documentation [here](https://github.com/actions/setup-node#usage).
+
+## Used Actions
+
+The following actions are being used...
+
+* [`actions/checkout`](https://github.com/actions/checkout)
+* [`actions/setup-node`](https://github.com/actions/setup-node)
 
 ## Source
 
