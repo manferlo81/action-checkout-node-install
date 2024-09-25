@@ -2,18 +2,16 @@ name: Checkout, Setup NodeJS and Install dependencies
 description: A composite action to checkout, setup NodeJS and install dependencies
 
 branding:
-  icon: arrow-down-circle
-  color: purple
+  icon: download
+  color: green
 
 inputs:
   node-version:
     description: NodeJS version to setup
-    required: false
     default: 20.x
 
   registry-url:
     description: Registry URL
-    required: false
     default: https://registry.npmjs.org/
 
 runs:
