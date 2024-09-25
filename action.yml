@@ -12,7 +12,6 @@ inputs:
 
   registry-url:
     description: Registry URL
-    default: https://registry.npmjs.org/
 
 runs:
   using: composite

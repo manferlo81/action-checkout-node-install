@@ -27,7 +27,7 @@ steps:
 | Input | Description | Required | Default |
 | ----- | ----------- | -------- | ------- |
 | [`node-version`](#node-version) | NodeJS version to setup | No | 20.x |
-| [`registry-url`](#registry-url) | Registry URL | No | <https://registry.npmjs.org/> |
+| [`registry-url`](#registry-url) | Registry URL | No | "" |
 
 ### `node-version`
 
@@ -59,7 +59,7 @@ inputs:
   registry-url:
     description: Registry URL
     required: false
-    default: https://registry.npmjs.org/
+    default: ""
 
 runs:
   using: composite
