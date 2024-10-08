@@ -1,5 +1,7 @@
-name: Checkout, Setup Node.js v${{ inputs.node-version }} and Install dependencies
+name: Checkout, Setup Node.js and Install dependencies
 description: A composite action to checkout, setup Node.js and install dependencies
+
+author: Manuel Fernández
 
 branding:
   icon: download
