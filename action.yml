@@ -1,5 +1,5 @@
-name: Checkout, Setup NodeJS and Install dependencies
-description: A composite action to checkout, setup NodeJS and install dependencies
+name: Checkout, Setup Node.js v${{ inputs.node-version }} and Install dependencies
+description: A composite action to checkout, setup Node.js and install dependencies
 
 branding:
   icon: download
@@ -7,7 +7,7 @@ branding:
 
 inputs:
   node-version:
-    description: NodeJS version to setup
+    description: Node.js version to setup
     default: 20.x
 
   registry-url:
@@ -19,7 +19,7 @@ runs:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: Setup NodeJS ${{ inputs.node-version }}
+    - name: Setup Node.js v${{ inputs.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ inputs.node-version }}
