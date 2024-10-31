@@ -10,10 +10,12 @@ branding:
 inputs:
   node-version:
     description: Node.js version to setup
+    required: false
     default: 20.x
 
   registry-url:
     description: Registry URL
+    required: false
 
 runs:
   using: composite
