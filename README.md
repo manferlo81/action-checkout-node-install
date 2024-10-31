@@ -1,6 +1,6 @@
 # action-checkout-node-install
 
-A composite action to checkout, setup NodeJS and install dependencies
+A composite action to checkout, setup Node.js and install dependencies
 
 We will run `npm ci` (see [Source section](#source)) which requires a `package-lock.json` or `npm-shrinkwrap.json`, make sure it exists otherwise the action will fail.
 
@@ -15,7 +15,7 @@ We will run `npm ci` (see [Source section](#source)) which requires a `package-l
 
 ```yaml
 steps:
-  - name: Checkout, Setup NodeJS v16.x and Install dependencies
+  - name: Checkout, Setup Node.js v16.x and Install dependencies
     uses: manferlo81/action-checkout-node-install@v1
     with:
       node-version: 16.x
@@ -26,12 +26,12 @@ steps:
 
 | Input | Description | Required | Default |
 | ----- | ----------- | -------- | ------- |
-| [`node-version`](#node-version) | NodeJS version to setup | No | 20.x |
+| [`node-version`](#node-version) | Node.js version to setup | No | 20.x |
 | [`registry-url`](#registry-url) | Registry URL | No | "" |
 
 ### `node-version`
 
-Sets what version of NodeJS will be installed. This values will be passed to [`actions/setup-node`](https://github.com/actions/setup-node).  See their documentation [here](https://github.com/actions/setup-node#usage).
+Sets what version of Node.js will be installed. This values will be passed to [`actions/setup-node`](https://github.com/actions/setup-node).  See their documentation [here](https://github.com/actions/setup-node#usage).
 
 ### `registry-url`
 
@@ -47,12 +47,12 @@ The following actions are being used...
 ## Source
 
 ```yaml
-name: Checkout, Setup NodeJS and Install dependencies
-description: A composite action to checkout, setup NodeJS and install dependencies
+name: Checkout, Setup Node.js and Install dependencies
+description: A composite action to checkout, setup Node.js and install dependencies
 
 inputs:
   node-version:
-    description: NodeJS version to setup
+    description: Node.js version to setup
     required: false
     default: 20.x
 
@@ -67,7 +67,7 @@ runs:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: Setup NodeJS ${{ inputs.node-version }}
+    - name: Setup Node.js ${{ inputs.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ inputs.node-version }}
