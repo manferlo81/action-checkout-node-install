@@ -26,4 +26,4 @@ jobs:
           make_latest: true
 
       - name: Adding markdown
-        run: echo "GitHub Release Create! ( ${{ steps.create-release.outputs.url }} )" >> $GITHUB_STEP_SUMMARY
+        run: echo "GitHub Release Created! ( ${{ steps.create-release.outputs.url }} )" >> $GITHUB_STEP_SUMMARY
