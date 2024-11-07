@@ -41,7 +41,7 @@ jobs:
 
       - name: Extract Major Tag
         id: extract-tag
-        run: echo "tag=$(node ${{ github.action_path }}/scripts/extract-major-tag.js ${{ github.ref_name }})" >> $GITHUB_OUTPUT
+        run: echo "tag=$(node scripts/extract-major-tag.js ${{ github.ref_name }})" >> $GITHUB_OUTPUT
 
   update_major:
     name: Update Major version
