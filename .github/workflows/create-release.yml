@@ -1,4 +1,5 @@
-name: Release
+name: Create Release
+run-name: Create Release for ${{ github.ref_name }}
 
 on:
   push:
@@ -25,5 +26,5 @@ jobs:
           generate_release_notes: true
           make_latest: true
 
-      - name: Adding markdown
+      - name: Show Release URL on summary
         run: echo "GitHub Release Created! ( ${{ steps.create-release.outputs.url }} )" >> $GITHUB_STEP_SUMMARY
