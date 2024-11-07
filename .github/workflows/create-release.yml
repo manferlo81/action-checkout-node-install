@@ -23,33 +23,3 @@ jobs:
         with:
           generate_release_notes: true
           make_latest: true
-
-  extract_major_version:
-    name: Extract Major Version
-
-    runs-on: ubuntu-latest
-    needs: create_release
-
-    outputs:
-      major-tag: ${{ steps.extract-tag.outputs.tag }}
-
-    steps:
-      - name: setup NodeJS 20.x
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20.x
-
-      - name: Extract Major Tag
-        id: extract-tag
-        run: echo "tag=$(node scripts/extract-major-tag.js ${{ github.ref_name }})" >> $GITHUB_OUTPUT
-
-  update_major:
-    name: Update Major version
-
-    runs-on: ubuntu-latest
-    needs: extract_major_version
-
-    steps:
-      - run: |
-          echo "Just show major tag for now"
-          echo "major-tag = ${{ needs.extract_major_version.outputs.major-tag }}"
