@@ -1,0 +1,20 @@
+changelog:
+  categories:
+    - title: BREAKING CHANGES
+      labels:
+        - breaking
+        - breaking-change
+
+    - title: Features
+      labels:
+        - feat
+        - feature
+
+    - title: Bug Fixes
+      labels:
+        - fix
+        - bug-fix
+
+    - title: Other Changes
+      labels:
+        - change

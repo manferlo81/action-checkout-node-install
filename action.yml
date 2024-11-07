@@ -1,0 +1,35 @@
+name: Checkout, Setup Node.js and Install dependencies
+description: A composite action to checkout, setup Node.js and install dependencies
+
+author: Manuel Fernández
+
+branding:
+  icon: download
+  color: green
+
+inputs:
+  node-version:
+    description: Node.js version to setup
+    required: false
+    default: 20.x
+
+  registry-url:
+    description: Registry URL
+    required: false
+
+runs:
+  using: composite
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js v${{ inputs.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.node-version }}
+        registry-url: ${{ inputs.registry-url }}
+        cache: npm
+
+    - name: Install dependencies
+      shell: bash
+      run: npm ci
